@@ -1,11 +1,19 @@
-#Escriba un programa que genere todas las potencias de 2, desde la 0-ésima hasta la ingresada por el usuario:
+#Escriba un programa que pida al usuario dos números enteros, y luego entregue la suma de todos los números que están entre ellos. 
+#Por ejemplo, si los números son 1 y 7, debe entregar como resultado 2 + 3 + 4 + 5 + 6 = 20.
 
-import math
 
-print ("Exercise 2 Powers of two")
 
-number = int(input("Please, enter number: "))
+print ("Exercise 3 Addition between numbers")
 
-for i in range (0, number + 1 ):
-    answer = math.pow( 2, i)
-    print (f" {answer}")
+number1 = int(input("Please, enter number: "))
+number2 = int(input("Please, enter number: "))
+
+if number1 > number2:
+    number1, number2 = number2, number1
+
+Addition = 0
+
+for i in range (number1 + 1, number2):
+    Addition += i
+print (f"{Addition}")
+
