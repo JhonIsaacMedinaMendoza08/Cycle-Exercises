@@ -1,20 +1,18 @@
-#Un viajero desea saber cuánto tiempo tomó un viaje que realizó. Él tiene la duración en minutos de cada uno de los tramos del viaje.
-#Desarrolle un programa que permita ingresar los tiempos de viaje de los tramos y entregue como resultado el tiempo total de viaje en formato horas:minutos.
+#Desarolle un programa para estimar el valor de π usando la siguiente suma infinita:
+#π=   4(1−13+15−17+…)
 
+import math
 
-print ("Exercise 6 Travel time")
+print ("Exercise 8 PI")
 
-total_minutes = 0
+def estimate_pi(number):
+    addition = 0.0
+    for j in range (number):
+        term = math.pow(-1, j) / (2 * j + 1)
+        addition = addition + term
+    estimate_pi = 4 * addition
+    return estimate_pi
 
-while True:
-    distance = int(input("travel time (0 to end): "))
-    if distance == 0:
-        break
-    total_minutes = total_minutes + distance
-
-hours = total_minutes // 60
-minutes = total_minutes % 60
-
-print (f"total travel time {hours}:{minutes:02d} hours")
-
-
+number = int(input("Enter the number of terms (n):"))
+answer = estimate_pi(number)
+print (f"Estimation of π with {number} terms: {answer}")
