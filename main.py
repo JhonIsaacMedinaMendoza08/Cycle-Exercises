@@ -1,20 +1,22 @@
-#Desarrolle un programa que permita trabajar con las potencias fraccionales de dos, es decir:
+#Desarrolle un programa que entregue un valor aproximado de e, calculando esta suma hasta que la diferencia entre dos sumandos 
+# consecutivos sea menor que 0,0001.
 
 
-print ("Exercise 9 Addition of fractions")
+print ("Exercise 10 e ")
 
-def fractional_powers():
-    pow = 1
-    frac = 0.5
-    addition = 0.0
+def Approx_e():
+    addition = 1.0  
+    number = 1
+    term = 1 
 
-    print(f"{'Pow':<10}{'Fracción':<10}{'addition':<10}")
-    
-    while frac > 0.000001:
-        addition = addition + frac
-        print(f"{pow:<10}{frac:<10}{addition:<10}")
-        
-        pow = pow + 1
-        frac = frac / 2  
+    while True:
+        term = term / number  
+        if term < 0.0001:
+            break
+        addition = addition + term
+        number = number + 1
 
-fractional_powers()
+    return addition
+
+answer = Approx_e()
+print(f"Approximation of e: {answer:.5f}")    
