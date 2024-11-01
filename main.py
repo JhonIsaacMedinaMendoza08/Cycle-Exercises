@@ -1,18 +1,20 @@
-#Desarolle un programa para estimar el valor de π usando la siguiente suma infinita:
-#π=   4(1−13+15−17+…)
+#Desarrolle un programa que permita trabajar con las potencias fraccionales de dos, es decir:
 
-import math
 
-print ("Exercise 8 PI")
+print ("Exercise 9 Addition of fractions")
 
-def estimate_pi(number):
+def fractional_powers():
+    pow = 1
+    frac = 0.5
     addition = 0.0
-    for j in range (number):
-        term = math.pow(-1, j) / (2 * j + 1)
-        addition = addition + term
-    estimate_pi = 4 * addition
-    return estimate_pi
 
-number = int(input("Enter the number of terms (n):"))
-answer = estimate_pi(number)
-print (f"Estimation of π with {number} terms: {answer}")
+    print(f"{'Pow':<10}{'Fracción':<10}{'addition':<10}")
+    
+    while frac > 0.000001:
+        addition = addition + frac
+        print(f"{pow:<10}{frac:<10}{addition:<10}")
+        
+        pow = pow + 1
+        frac = frac / 2  
+
+fractional_powers()
