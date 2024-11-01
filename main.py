@@ -1,22 +1,19 @@
-#Desarrolle un programa que entregue un valor aproximado de e, calculando esta suma hasta que la diferencia entre dos sumandos 
-# consecutivos sea menor que 0,0001.
+#Desarrolle un programa que entregue la secuencia de Collatz de un número entero:
 
+print ("Exercise 11  Collatz sequence")
 
-print ("Exercise 10 e ")
+def Sequence_collatz(number):
+    Sequence = []  
+    while number != 1:
+        Sequence.append(number)  
+        if number % 2 == 0:
+            number //= 2  
+        else:
+            number = 3 * number + 1  
+    Sequence.append(1)  
+    return Sequence
 
-def Approx_e():
-    addition = 1.0  
-    number = 1
-    term = 1 
+number = int(input("Enter an integer: "))
+answer = Sequence_collatz(number)
 
-    while True:
-        term = term / number  
-        if term < 0.0001:
-            break
-        addition = addition + term
-        number = number + 1
-
-    return addition
-
-answer = Approx_e()
-print(f"Approximation of e: {answer:.5f}")    
+print(" ".join(map(str, answer)))
